@@ -1,6 +1,12 @@
 # Golang proposal for declearing variable in outer scope in `if` statement 
 Golang proposal for declaring variable for the outer scope in an "if" statement
 
+## Spec
+
+```
+IfStmt = "if" ( [ SimpleStmt ";" ] Expression | SimpleStmt ";" Expression ";" ShortVarDecl ) Block [ "else" ( IfStmt | Block ) ] .
+```
+
 ## Example
 
 ```go
