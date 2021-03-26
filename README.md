@@ -3,7 +3,7 @@ Golang proposal for declaring variable for the outer scope in an "if" statement
 
 ## Spec
 
-```
+```ebnf
 IfStmt = "if" [ SimpleStmt ";" ] Expression [ PostIfStmt ";" ] Block [ "else" ( IfStmt | Block ) ] .
 PostIfStmt = SimpleStmt .
 ```
