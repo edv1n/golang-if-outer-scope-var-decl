@@ -8,7 +8,7 @@ IfStmt = "if" [ SimpleStmt ";" ] Expression [ PostIfStmt ";" ] Block [ "else" ( 
 PostIfStmt = SimpleStmt .
 ```
 
-`PostIfStmt` can access variables defined in the `IfStmt`. It allows declearing variables for the outer scope of `IfStmt`.
+`PostIfStmt` can access variables defined in a `IfStmt`. It allows declearing variables for the outer scope of a `IfStmt`.
 
 ## Usage
 
