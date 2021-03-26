@@ -12,7 +12,7 @@ IfStmt = "if" ( [ SimpleStmt ";" ] Expression | SimpleStmt ";" Expression ";" Sh
 ### Scoping `error` within `if` statement when invoking functions that return more than one result
 
 ```go
-if t, err := time.Parse(time.RFC3339, "2006-01-02T15:04:05Z"); err != nil; t {
+if t, err := time.Parse(time.RFC3339, "2006-01-02T15:04:05Z"); err != nil; t := t{
     return nil, err
 }
 
