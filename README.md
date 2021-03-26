@@ -4,8 +4,11 @@ Golang proposal for declaring variable for the outer scope in an "if" statement
 ## Spec
 
 ```
-IfStmt = "if" ( [ SimpleStmt ";" ] Expression | SimpleStmt ";" Expression ";" ShortVarDecl ) Block [ "else" ( IfStmt | Block ) ] .
+IfStmt = "if" [ SimpleStmt ";" ] Expression [ PostIfStmt ";" ] Block [ "else" ( IfStmt | Block ) ] .
+PostIfStmt = SimpleStmt .
 ```
+
+`PostIfStmt` can access variables defined in the `IfStmt`. It allows declearing variables for the outer scope of `IfStmt`.
 
 ## Usage
 
@@ -36,7 +39,9 @@ fmt.Printf("%v", b) //undefined
 fmt.Printf("%v", outerVar) // print "aaa"
 ```
 
-## Short handed var decl
+## Short handed var decl [alternative syntax]
+
+The following will not fit the Spec mentioned above.
 
 ```go
 func f() (string, error) {
